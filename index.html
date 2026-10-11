@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>双人同行 · 工具棚</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="divider"></div>
+    <div class="pane" id="pane-may">
+      <div class="badge may"><span class="name">小梅</span><span class="hearts"></span><span class="ability">🔨 锤子</span></div>
+      <div class="active-tag">● 操控中</div>
+      <div class="prompt"></div>
+    </div>
+    <div class="pane" id="pane-cody">
+      <div class="badge cody"><span class="name">小柯</span><span class="hearts"></span><span class="ability nails"></span></div>
+      <div class="active-tag">● 操控中</div>
+      <div class="prompt"></div>
+      <div class="crosshair"></div>
+    </div>
+    <div id="topbar"><span id="collect">✨ 0 / 0</span><span id="timer">00:00</span></div>
+    <div id="subtitle"></div>
+    <div id="toast"></div>
+    <div id="keys">Tab 切换角色 · V 分屏/单屏 · M 静音 · Esc 暂停</div>
+  </div>
+
+  <div id="fade"></div>
+
+  <div id="title" class="overlay">
+    <div class="title-card">
+      <div class="logo">双人同行</div>
+      <div class="sub">Twin Steps · 第一章「工具棚」</div>
+      <p class="story">一对闹别扭的夫妻被魔法变成了小玩偶——黏土做的 <b class="c">小柯</b> 与木头做的 <b class="m">小梅</b>。<br />穿过巨大的工具棚，找到那本会说话的《爱情魔法书》，也许就能变回去……</p>
+      <button id="start-btn">开始冒险</button>
+      <div class="controls">
+        <div><kbd>WASD</kbd> 移动</div><div><kbd>鼠标</kbd> 视角</div>
+        <div><kbd>空格</kbd> 跳跃 / 二段跳</div><div><kbd>Shift</kbd> 冲刺（空中可用）</div>
+        <div><kbd>C</kbd> 空中重踏</div><div><kbd>E</kbd> 互动 / 小梅抓钉摆荡</div>
+        <div><kbd>Tab</kbd> 切换角色</div><div><kbd>V</kbd> 分屏 / 单屏</div>
+        <div><kbd>左键</kbd> 小梅挥锤 · 小柯掷钉</div><div><kbd>右键</kbd> 小柯瞄准 · <kbd>R</kbd> 召回钉子</div>
+      </div>
+      <div class="hint">单人模式：两个角色轮流操控，合作解开机关。</div>
+    </div>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <div class="title-card small">
+      <div class="logo">暂停</div>
+      <button id="resume-btn">继续游戏</button>
+      <button id="restart-btn" class="ghost">回到检查点</button>
+    </div>
+  </div>
+
+  <div id="end" class="overlay hidden">
+    <div class="title-card">
+      <div class="logo">章节完成！</div>
+      <div class="sub">第一章「工具棚」</div>
+      <p id="end-stats"></p>
+      <button id="again-btn">再玩一次</button>
+    </div>
+  </div>
+
+  <div id="loading" class="overlay"><div class="spinner"></div><div>正在搭建工具棚……</div></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
